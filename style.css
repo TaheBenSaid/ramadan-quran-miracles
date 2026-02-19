@@ -181,11 +181,11 @@ header .subtitle {
     padding: 20px;
 }
 
-/* Lantern Items (Replacing Doors) */
 .door-item {
-    aspect-ratio: 1/1.4;
-    background: linear-gradient(135deg, #1a2333 0%, #0a0e1a 100%);
-    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    aspect-ratio: 4/5;
+    background: var(--bg-accent);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 100px 100px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -193,85 +193,41 @@ header .subtitle {
     cursor: pointer;
     transition: var(--transition-smooth);
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-
-    /* Elegant Fanous Shape */
-    clip-path: polygon(50% 0%,
-            /* Hanging point */
-            70% 5%,
-            /* Cap top */
-            90% 20%,
-            /* Upper body */
-            100% 45%,
-            /* Mid bulge */
-            90% 85%,
-            /* Lower taper */
-            75% 100%,
-            /* Base */
-            25% 100%,
-            /* Base */
-            10% 85%,
-            /* Lower taper */
-            0% 45%,
-            /* Mid bulge */
-            10% 20%,
-            /* Upper body */
-            30% 5%
-            /* Cap top */
-        );
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    clip-path: ellipse(100% 100% at 50% 100%);
 }
 
 .door-item::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 40%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(15px);
-    z-index: 0;
-}
-
-.door-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to top, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.05));
     pointer-events: none;
 }
 
 .door-item:hover {
-    transform: translateY(-8px) scale(1.05);
+    transform: translateY(-10px);
     border-color: var(--gold-primary);
-    background: linear-gradient(135deg, #222d42 0%, #0d121f 100%);
-    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.25);
-}
-
-.door-item:hover::before {
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.7) 0%, transparent 70%);
-    filter: blur(20px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
 }
 
 .door-number {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--gold-soft);
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     z-index: 1;
-    text-shadow: 0 0 10px rgba(252, 246, 186, 0.2);
 }
 
 .door-label {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     z-index: 1;
 }
 
