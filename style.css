@@ -77,6 +77,79 @@ body {
     }
 }
 
+/* Floating Lanterns Background */
+.lanterns-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-lantern {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='90' viewBox='0 0 60 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l-5 10h10l-5-10zM15 10h30v5l5 5v45l-5 5v5l-10 10H25l-10-10v-5l-5-5V20l5-5v-5z' fill='%23d4af37' fill-opacity='0.2'/%3E%3Cpath d='M20 25h20M20 35h20M20 45h20M20 55h20' stroke='%23d4af37' stroke-opacity='0.1' stroke-width='2'/%3E%3Ccircle cx='30' cy='40' r='8' fill='%23fcf6ba' fill-opacity='0.15'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sway 10s infinite ease-in-out, floatUp 20s infinite linear;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.1));
+}
+
+.lantern-1 {
+    top: 15%;
+    left: 8%;
+    animation-delay: 0s, -5s;
+}
+
+.lantern-2 {
+    top: 55%;
+    left: 88%;
+    animation-delay: -2s, -12s;
+    transform: scale(0.8);
+}
+
+.lantern-3 {
+    top: 35%;
+    left: 2%;
+    animation-delay: -4s, -8s;
+    transform: scale(1.2);
+}
+
+.lantern-4 {
+    top: 70%;
+    left: 15%;
+    animation-delay: -6s, -15s;
+    transform: scale(0.6);
+}
+
+@keyframes sway {
+
+    0%,
+    100% {
+        transform: rotate(-6deg);
+    }
+
+    50% {
+        transform: rotate(6deg);
+    }
+}
+
+@keyframes floatUp {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
 header {
     text-align: center;
     padding: 60px 20px;
@@ -108,11 +181,11 @@ header .subtitle {
     padding: 20px;
 }
 
+/* Lantern Items (Replacing Doors) */
 .door-item {
     aspect-ratio: 4/5;
-    background: var(--bg-accent);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 12px 12px 0 0;
+    background: linear-gradient(135deg, #161e2e 0%, #0d121f 100%);
+    border: 1px solid rgba(212, 175, 55, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,48 +193,57 @@ header .subtitle {
     cursor: pointer;
     transition: var(--transition-smooth);
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    /* Lantern Shape */
+    clip-path: polygon(50% 0%,
+            85% 15%,
+            100% 35%,
+            100% 75%,
+            80% 95%,
+            50% 100%,
+            20% 95%,
+            0% 75%,
+            0% 35%,
+            15% 15%);
 }
 
 .door-item::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.05));
-    pointer-events: none;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 10%;
+    background: var(--gold-primary);
+    opacity: 0.1;
+    border-radius: 50%;
+    filter: blur(5px);
 }
 
 .door-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px) scale(1.02);
     border-color: var(--gold-primary);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+    background: linear-gradient(135deg, #1c263b 0%, #111827 100%);
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.15);
 }
 
 .door-number {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--gold-soft);
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     z-index: 1;
+    text-shadow: 0 0 10px rgba(252, 246, 186, 0.2);
 }
 
 .door-label {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     z-index: 1;
-}
-
-/* Door Arch Shape */
-.door-item {
-    clip-path: ellipse(100% 100% at 50% 100%);
-    /* Refining to a proper arch */
-    border-radius: 100px 100px 10px 10px;
 }
 
 /* Modal Styling */
