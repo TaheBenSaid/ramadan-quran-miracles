@@ -152,6 +152,27 @@ header .subtitle {
     border-radius: 100px 100px 10px 10px;
 }
 
+/* Plus Door Style */
+.door-item.plus-door {
+    background: rgba(212, 175, 55, 0.05);
+    border: 2px dashed rgba(212, 175, 55, 0.3);
+    clip-path: none;
+    /* Keep it rectangular or different to stand out */
+    border-radius: 12px;
+}
+
+.door-item.plus-door:hover {
+    border-color: var(--gold-primary);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.plus-icon {
+    font-size: 3rem;
+    color: var(--gold-primary);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
 /* Modal Styling */
 .modal {
     position: fixed;
@@ -406,6 +427,65 @@ header .subtitle {
     color: var(--text-muted);
     font-size: 0.9rem;
     opacity: 0.7;
+}
+
+/* Creation Form Styles */
+.creation-card {
+    max-width: 500px !important;
+    height: auto !important;
+    max-height: 90vh;
+}
+
+.creation-title {
+    color: var(--gold-primary);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#miracle-form input,
+#miracle-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 15px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+#miracle-form input:focus,
+#miracle-form textarea:focus {
+    outline: none;
+    border-color: var(--gold-soft);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.save-btn {
+    width: 100%;
+    background: var(--gold-primary);
+    color: var(--deep-blue);
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.save-btn:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
 footer {
