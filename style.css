@@ -183,9 +183,9 @@ header .subtitle {
 
 /* Lantern Items (Replacing Doors) */
 .door-item {
-    aspect-ratio: 4/5;
-    background: linear-gradient(135deg, #161e2e 0%, #0d121f 100%);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    aspect-ratio: 1/1.4;
+    background: linear-gradient(135deg, #1a2333 0%, #0a0e1a 100%);
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -193,40 +193,69 @@ header .subtitle {
     cursor: pointer;
     transition: var(--transition-smooth);
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 
-    /* Lantern Shape */
+    /* Elegant Fanous Shape */
     clip-path: polygon(50% 0%,
-            85% 15%,
-            100% 35%,
-            100% 75%,
-            80% 95%,
-            50% 100%,
-            20% 95%,
-            0% 75%,
-            0% 35%,
-            15% 15%);
+            /* Hanging point */
+            70% 5%,
+            /* Cap top */
+            90% 20%,
+            /* Upper body */
+            100% 45%,
+            /* Mid bulge */
+            90% 85%,
+            /* Lower taper */
+            75% 100%,
+            /* Base */
+            25% 100%,
+            /* Base */
+            10% 85%,
+            /* Lower taper */
+            0% 45%,
+            /* Mid bulge */
+            10% 20%,
+            /* Upper body */
+            30% 5%
+            /* Cap top */
+        );
 }
 
 .door-item::before {
     content: '';
     position: absolute;
-    top: 5%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 10%;
-    background: var(--gold-primary);
-    opacity: 0.1;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
     border-radius: 50%;
-    filter: blur(5px);
+    filter: blur(15px);
+    z-index: 0;
+}
+
+.door-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .door-item:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.05);
     border-color: var(--gold-primary);
-    background: linear-gradient(135deg, #1c263b 0%, #111827 100%);
-    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.15);
+    background: linear-gradient(135deg, #222d42 0%, #0d121f 100%);
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.25);
+}
+
+.door-item:hover::before {
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.7) 0%, transparent 70%);
+    filter: blur(20px);
 }
 
 .door-number {
