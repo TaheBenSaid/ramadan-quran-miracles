@@ -252,7 +252,8 @@ header .subtitle {
 }
 
 .glass-box {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.35);
+    /* Reduced opacity for clearer background */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: 28px;
@@ -266,17 +267,6 @@ header .subtitle {
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
         inset 0 0 1px 1px rgba(255, 255, 255, 0.05);
-    /* Fade effect for scrolling content */
-    -webkit-mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%);
-    mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            black 8%,
-            black 92%,
-            transparent 100%);
 }
 
 .miracle-titles {

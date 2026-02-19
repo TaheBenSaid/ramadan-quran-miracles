@@ -70,9 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Close Modal
-    closeBtn.addEventListener('click', () => {
+    const closeModal = () => {
         modal.classList.add('hidden');
         document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Close on overlay click
+    document.querySelector('.modal-overlay').addEventListener('click', closeModal);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
     });
 
     // Handle Card Navigation (Mobile-style)
