@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Quran Miracles - 30 Doors</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars-container"></div>
+
+    <header>
+        <h1>Ramadan Quran Miracles</h1>
+        <p class="subtitle">A 30-day journey through the wonders of the Quran</p>
+    </header>
+
+    <main id="doors-grid" class="doors-grid">
+        <!-- Doors will be injected here by JS -->
+    </main>
+
+    <!-- Modal for Miracle Cards -->
+    <div id="miracle-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <div class="cards-container">
+                <!-- Card 1: Ayah & Title -->
+                <div class="instagram-card card-1" id="card-1">
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="glass-box">
+                            <div class="miracle-titles">
+                                <h2 class="arabic-title"></h2>
+                                <h3 class="english-title"></h3>
+                            </div>
+                            <div class="ayah-section">
+                                <p class="arabic-ayah"></p>
+                                <p class="english-ayah"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>Ramadan Miracles</span>
+                            <span class="day-number"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Description -->
+                <div class="instagram-card card-2" id="card-2">
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="glass-box">
+                            <div class="description-section">
+                                <h4>The Miracle</h4>
+                                <p class="miracle-description"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>Deepen Your Faith</span>
+                            <span class="day-number"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-nav">
+                <button id="prev-card" class="nav-btn">←</button>
+                <div class="nav-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                </div>
+                <button id="next-card" class="nav-btn">→</button>
+            </div>
+
+            <p class="screenshot-hint">Screenshot these for your Instagram Story</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ramadan Quran Miracles | Spiritual Reflection</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
