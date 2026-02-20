@@ -425,12 +425,15 @@ header .subtitle {
     font-weight: 600;
 }
 
-.miracle-description {
+.miracle-description,
+.miracle-description-1,
+.miracle-description-2 {
     font-size: 1.05rem;
     line-height: 1.8;
     color: #f1f5f9;
     font-weight: 300;
     text-align: left;
+    white-space: pre-line;
 }
 
 .card-footer {
